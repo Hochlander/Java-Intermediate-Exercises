@@ -1,0 +1,54 @@
+// seguindo thenewBoston internadiário, aulas #1 e #2
+
+// aprendendo métodos de String
+
+//classe única abaixo
+
+
+
+public class apples {
+		public static void main (String []args) {
+		
+			String [] palavras = {"papagaio", "palmeiras", "palestra", "cumieiras" };
+			String pi = "palmeirasdafloresta";
+			String a = "palestra";
+			String b = "italia";
+			
+		
+			
+			// fazendo um enhanced for loop 
+			for (String p: palavras) {
+				// na linha acima, "p" incorporará o valor de cada String do array palavras
+				
+				// método StartsWith
+				if 	(p.startsWith("pa")) 
+					System.out.println(p + " começa com pa");
+				// o método acima seleciona as palavras iniciadas com pa
+				
+				if 	(p.endsWith("eiras")) 
+					System.out.println(p + " termina com eiras");
+				// o método acima seleciona as palavras terminadas com eiras
+			}
+			
+			System.out.println("            ");
+			
+			// o método abaixo dá a posição de algum elemento na String
+			System.out.println(pi.indexOf("e"));
+			
+			// o método abaixo dá a posição do elemento "e" na String ignorando os 10 primeiros elementos
+			System.out.println(pi.indexOf("e", 9));
+			
+			// o método abaixo dá o índice de início de uma Substring(?)
+			System.out.println(pi.indexOf("sda"));
+			
+			// o método abaixo concatena strings de uma forma distinta de a+b
+			System.out.println(a.concat(b));
+			
+			// o método abaixo troca uma letra da String selecionada
+			System.out.println(a.replace("estra", "meiras"));
+			
+			// o método abaixo transforma tudo em maiúsculas
+			System.out.println(a.toUpperCase());
+			
+		}
+}
