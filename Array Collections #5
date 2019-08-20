@@ -1,0 +1,63 @@
+// seguindo the new boston #5
+
+//aprendendo Collections
+
+import java.util.*;
+
+// classe principal abaixo
+
+public class apples {
+	public static void main (String []args) {
+		String[] craques = {"Evvair", "Edmundo", "Gaaleano", "Paulonunes"};
+		
+		// o método abaixo cria uma lista vazia
+		List<String> list1 = new ArrayList<String>();
+		
+		
+		// o método abaixo cria um enhanced for
+		for (String x : craques)
+			
+			// para transportar os elementos o array para uma lista
+			list1.add(x);
+		
+		//nova lista abaixo
+		String[] craques93 = {"Evvair", "Edmundo"};
+		List<String> list2 = new ArrayList<String>();
+		
+		// adicionando elementos à lista 2
+		for (String y : craques93)	
+			list2.add(y);
+		
+		// o loop for abaixo exibe os elementos da lista 1
+		
+		for (int i=0; i<list1.size(); i+=1) {
+			System.out.printf("%s ", list1.get(i));
+		}
+		
+		// editando a lista 1 com a lista 2
+		editlist(list1, list2);
+		System.out.println();
+		
+		// exibindo lista 1
+		for (int i=0; i<list1.size(); i+=1) {
+			System.out.printf("%s ", list1.get(i));
+		}
+		
+	}	
+	public static void editlist (Collection<String> l1, Collection <String> l2) {
+		// iterator repete todos os elementos da lista 1
+		Iterator<String> it = l1.iterator();
+		while(it.hasNext()) {
+			//a condição abaixo verifica se há elementos da lista 2 iterados na lista 1
+			if (l2.contains(it.next()))
+				
+				// a linha abaixo remove da lista 1 os elementos em comum presentes na lista 2
+				it.remove();
+		}
+	}
+}
+
+// output abaixo
+
+Evvair Edmundo Gaaleano Paulonunes 
+Gaaleano Paulonunes 
