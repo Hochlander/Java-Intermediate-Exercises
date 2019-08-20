@@ -1,0 +1,33 @@
+// seguindo the new boston #3
+
+//aprendendo recursing, que é um método usado para usar a si mesmo
+
+// nesse caso, estamos imaginando como fazer um cálculo fatorial
+
+// classe principal abaixo
+
+public class apples {
+	
+	// nosso main chamará o método de fact, mas fact será outro método
+	public static void main (String []args) {
+		System.out.println(fact(5));					
+		}
+	
+	// fora de nosso método principal, construiremos nosso método fact
+	public static long fact (long n) {
+		
+		// abaixo, 1 será o "base-case"; é ele o que impede o programa de loopar infinitamente
+		if (n<=1)
+			return 1;
+		else
+			//com a operação abaixo, "n" fica menor em 1 a cada vez que o programa roda
+			// quando n=1, alcança-se o base case, e ele para de multiplicar por inferiores
+			return n * fact(n-1); 
+		
+		// dessa forma, pode-se dar o input ao método main, que chamará o método fact
+		// por sua vez, o método fact pegará o input e multiplicará por seu atecessor
+		// e repetirá esta operação até chegar ao base case, e então tudo pára
+	}
+	
+}
+			
