@@ -1,0 +1,86 @@
+// seguindo the new boston #7
+
+//classe principal abaixo
+
+import java.util.*;
+
+public class apples {
+	public static void main (String []args) {
+		String[] craques = {"Evvair", "Edmundo", "Gaaleano","sãomarcos", "Paulonunes"};
+		
+		// o método abaixo cria uma Linked List vazia
+		List<String> list1 = new LinkedList<String>();
+		
+		
+		// o método abaixo cria um enhanced for loop
+		for (String x : craques)
+			
+			// para transportar os elementos o array para uma lista
+			list1.add(x);
+		
+		//nova lista abaixo
+		String[] inimigos = {"MArcelinho", "Edilson", "Vampeta", "Ronaldo"};
+		List<String> list2 = new ArrayList<String>();
+		
+		// adicionando elementos à lista 2
+		for (String y : inimigos)	
+			list2.add(y);
+		
+		// o método abaixo adiciona os elementos da lista 2 à lista 1
+		list1.addAll(list2);
+		
+		// o método abaixo esvazia a lista 2
+		list2 = null;
+		
+		// o métdo abaixo exibe a lista
+		printMe(list1);
+		
+		// o método abaixo retira alguns elementos da lista
+		removeStuff(list1, 4,6);
+		
+		// exibe de novo
+		printMe(list1);
+		
+		// o método abaixo inverte 
+		reverseMe(list1);		
+		
+	}
+	
+	// os métodos printMe, removeStuff e reverseMe ainda não foram construídos
+	// as linhas abaixo construirão esses métodos
+	
+	// método printMe
+	private static void printMe(List<String> l) {
+		
+		//método for, abaixo, passa por todos os elementos da lista l 
+		for(String b: l)
+			
+			System.out.printf("%s ", b);
+		System.out.println();
+		}
+	
+	//método removeStuff
+	private static void removeStuff(List<String> l, int from, int to) {
+		
+		// atenção na linha abaixo: 
+		//1. l é a lista
+		//2. subList determina o fatiamento da lista, 
+		//3. from, to apontam onde a lista será fatiada
+		//4. clear é um comando built-in pra sacar a parte retirada da lista
+		l.subList(from,to).clear();
+		}
+	
+	
+	// método reverseMe
+		private static void reverseMe(List<String> l) {
+			
+			
+			//cria-se um iterator, e aponta-se o último elemento da list como ponto de partida
+			ListIterator<String> ingo = l.listIterator(l.size());
+			
+			//loop while para referir-se a todos os elementos anteriores ao de referência 
+			while(ingo.hasPrevious())
+				System.out.printf("%s ", ingo.previous());
+		}
+}
+			
