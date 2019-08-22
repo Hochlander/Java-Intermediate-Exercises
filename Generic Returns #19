@@ -1,0 +1,41 @@
+// seguindo the new boston #19
+
+//Aprendendo Método Generic Returns
+
+//Faremos uma fórmula de retorno que se applicará a integers e a strings
+
+import java.util.*;
+
+public class apples {
+	public static void main (String []args) {
+		
+		System.out.println(max(11, 40, 02));
+		System.out.println(max("valdivia", "edmundo", "osmar"));
+	}	
+	
+	//  o método pega o valor máximo de cada comparação 
+	
+	//"T" é um tipo genérico de variável
+	
+
+	public static <T extends Comparable<T>> T max (T a, T b, T c) {
+		
+		// "m" é o nome genérico para o valor máximo
+		T m = a;
+		
+		// se b for maior que a, então o máximo é b
+		if(b.compareTo(a) > 0 )
+			m = b;
+		
+		// se c é maior que m, então o máximmo é c
+		if(c.compareTo(m) > 0)
+			m=c;
+			
+		// queremos que o máximo valor seja retornado
+		return m;		
+	}
+}
+
+// output abaixo
+40
+valdivia
