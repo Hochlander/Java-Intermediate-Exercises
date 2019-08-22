@@ -1,0 +1,38 @@
+// seguindo the new boston #18
+
+//Aprendendo Método Genérico
+
+//É muito legal, porue se aplicar independenteente do tipo de variável
+
+import java.util.*;
+
+public class apples {
+	public static void main (String []args) {
+		
+		// as linhas abaixo criam um array de integer e outro de character
+		Integer[] souintegral = {1,2,3,4,5};
+		Character[] tenhocarater = {'a','b', 'c', 'd'};
+		
+		//as linhas abaixo chamam o mesmo método, pra diferentes tipos de variável
+		printMe(souintegral);
+		printMe(tenhocarater);
+	}	
+	
+	// falta, então, construir o método printMe()
+	
+	//"T" é um tipo genérico de variável
+	// "x" é o nome genérico do array a que o método se refere
+	// balito é o identifier;  variável que armazena os dados do array
+	public static <T> void printMe(T[] x) {
+		
+		//loop for para exibir os elementos do array genérico
+		for(T balito : x)
+			System.out.printf("%s ", balito);
+		System.out.println();
+	}
+}
+
+//output abaixo
+
+1 2 3 4 5 
+a b c d 
