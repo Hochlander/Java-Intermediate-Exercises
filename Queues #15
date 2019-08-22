@@ -1,0 +1,34 @@
+// seguindo the new boston #14
+
+//Aprendendo Queue
+
+//É similar ao Stack
+
+import java.util.*;
+
+public class apples {
+	public static void main (String []args) {
+		
+		// a linha abaixo cria a Queue
+		PriorityQueue<String> q = new PriorityQueue<String>();
+		
+		// "offer" é o comando para adicionar uma nova linha à Queue
+		q.offer("primeiro");
+		q.offer("segundo");
+		q.offer("terceiro");
+	
+		System.out.printf("%s " , q);
+		System.out.println();
+		
+		//"poll" é o método para tirar elementos da Queue
+		// não precisa de parâmetros, pq vai direto pro 1º elemento
+		
+		q.poll();
+		System.out.printf("%s " , q);
+	}	
+}
+
+// output abaixo
+
+[primeiro, segundo, terceiro] 
+[segundo, terceiro] 
