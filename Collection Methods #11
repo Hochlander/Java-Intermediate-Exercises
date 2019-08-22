@@ -1,0 +1,35 @@
+// seguindo the new boston #10 e #11
+
+//Brincando com listas
+
+// classe principal abaixo
+
+import java.util.*;
+
+public class apples {
+	public static void main (String []args) {
+		String[] craques = {"Evvair", "Edmundo", "Gaaleano","sãomarcos", "Paulonunes"};
+		
+		// o método abaixo cria uma Linked List com os elementos do array acima
+		List<String> balito = Arrays.asList(craques);
+		
+		// sendo uma lista, pode-se adicionar a ela métodos da classe Collections
+		// o método abaixo coloca em ordem alfabética
+		Collections.sort(balito);
+		System.out.printf("%s\n", balito);
+		
+		// o  método abaixo coloca em ordem alfabética e inverte
+		Collections.sort(balito, Collections.reverseOrder());
+		System.out.printf("%s\n", balito);
+		
+		// o método abaixo substitui todos os elementos de uma lista por uma única instância
+		Collections.fill(balito, "Felipão");
+		System.out.printf("%s\n", balito);
+		}
+}
+
+// output abaixo
+
+[Edmundo, Evvair, Gaaleano, Paulonunes, sãomarcos]
+[sãomarcos, Paulonunes, Gaaleano, Evvair, Edmundo]
+[Felipão, Felipão, Felipão, Felipão, Felipão]
