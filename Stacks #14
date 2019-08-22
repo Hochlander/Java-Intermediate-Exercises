@@ -1,0 +1,54 @@
+// seguindo the new boston #14
+
+//Aprendendo Stack
+
+//stack é um pilha de coisas. O método Stack, você tira ou põe novos elementos na pilha 
+
+import java.util.*;
+
+public class apples {
+	public static void main (String []args) {
+		
+		// a linha abaixo cria a Stack craques
+		Stack<String> craques = new Stack<String>();
+		
+		// "push" é o comando para adicionar uma nova linha à Stack
+		craques.push("Weverton");
+		printStack(craques);
+		craques.push("MRocha");
+		printStack(craques);
+		craques.push("Luan");
+		printStack(craques);
+				
+		
+		// "pop" é o método para tirar o último item adicionado à Stack
+		// não s deve dar um parâmetro ao "pop", pq ele já pressupõe que 
+		//é o último adicionado o que será retirado
+		craques.pop();
+		printStack(craques);
+		craques.pop();
+		printStack(craques);
+		craques.pop();
+		printStack(craques);
+		
+	}
+	
+	// faltou construir o método "printStack"
+	private static void printStack(Stack<String> c) {
+		
+		// condição if para o caso de a pilha estar vazia
+		if(c.isEmpty())
+			System.out.println("nada aqui");
+			else
+				System.out.printf("%s (topo de pilha)\n", c);
+	}	
+}
+
+// output abaixo
+
+[Weverton] (topo de pilha)
+[Weverton, MRocha] (topo de pilha)
+[Weverton, MRocha, Luan] (topo de pilha)
+[Weverton, MRocha] (topo de pilha)
+[Weverton] (topo de pilha)
+nada aqui
