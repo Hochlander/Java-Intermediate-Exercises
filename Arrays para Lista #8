@@ -1,0 +1,36 @@
+// seguindo the new boston #8
+
+//Convertendo arrays para listas, e listas para arrays
+
+//converter arrays para listas pode ser interessante ara poder usar os 
+//built-in methods para listas
+
+import java.util.*;
+
+public class apples {
+	public static void main (String []args) {
+		String[] craques = {"Evvair", "Edmundo", "Gaaleano","sãomarcos", "Paulonunes"};
+		
+		// o método abaixo cria uma Linked List com os elementos do array acima
+		LinkedList<String> balito = new LinkedList<String>(Arrays.asList(craques));
+		
+		// o método abaixo adicion um item ao final da lista
+		balito.add("Betinho");
+		
+			
+		// o método abaixo insere um item no início da lista
+		balito.addFirst("Oberdan");
+		
+		// convertendo de volta para Array
+		craques = balito.toArray(new String[balito.size()]);
+		
+		// enhanced for loop pelos lementos de craques, array recém criado
+		for(String x : craques)
+			
+			// exibindo os elementos do novo array craques
+			System.out.printf("%s ", x);		
+		}
+}
+
+// output
+Oberdan Evvair Edmundo Gaaleano sãomarcos Paulonunes Betinho 
