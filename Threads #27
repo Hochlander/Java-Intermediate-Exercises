@@ -1,0 +1,67 @@
+// seguindo thenewboston #27
+
+// Threads permitem fazer mais de uma coisa ao mesmo tempo no mesmo programa
+
+import java.util.*;
+
+// a interface Runnable contém o método run()
+// Runnable() é o método que permite usar Threads
+// cada thread tem um nome e um tempo randômico
+
+public class tuna implements Runnable {
+	String nome;
+	int tempo;
+	Random r = new Random();
+	
+	//construtor
+	public tuna(String x) {
+		// os nomes serão atribuídos às threads na classe principal
+		nome=x;
+		tempo = r.nextInt(999);		
+	}
+	
+	public void run() {
+		try {
+			System.out.printf("%s is sleeping for %d\n", nome, tempo);
+			Thread.sleep(tempo);
+			System.out.printf("%s tá feito \n", nome);
+		}catch(Exception e) {}		
+	}	
+}
+
+
+// classe principal abaixo
+
+import javax.swing.*;
+
+public class Dog{
+	
+	public static void main (String[] args) {
+		
+		// o parâmetro de Thread tem que indicar de qual classe a Thread será feita
+		// a cllasse tuna tem um construtor, que pede o nome da Thread
+		Thread t1 = new Thread (new tuna ("um"));
+		Thread t2 = new Thread (new tuna ("dois"));
+		Thread t3 = new Thread (new tuna ("três"));
+		Thread t4 = new Thread (new tuna ("quatro"));
+		
+		// start() significa chamar o método run()
+		t1.start();
+		t2.start();
+		t3.start();
+		t4.start();
+		
+	}
+
+}
+
+// output abaixo
+
+um is sleeping for 444
+três is sleeping for 622
+quatro is sleeping for 240
+dois is sleeping for 621
+quatro tá feito 
+um tá feito 
+três tá feito 
+dois tá feito 
