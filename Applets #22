@@ -1,0 +1,34 @@
+// seguindo the new boston #22
+
+//Trabalhando com Applets
+
+// classe principal abaixo
+
+import java.awt.*;
+import javax.swing.*;
+
+public class apples extends JApplet {
+	
+	// fanzendo uma calculadora de soma
+	private double soma;
+	
+	// método init
+	public void init(){
+		String primnum = JOptionPane.showInputDialog("Digite o primeiro número: ");
+		String segnum = JOptionPane.showInputDialog("Digite o segundo número: ");
+		
+		// convertendo strings em números
+		double n1 = Double.parseDouble(primnum);
+		double n2 = Double.parseDouble(segnum);
+		
+		// formulando a soma
+		soma = n1 + n2;
+	}
+	
+	
+	public void paint (Graphics g) {
+		
+		super.paint(g);
+		g.drawString("A soma é " + soma, 25, 30);
+	}		
+}
