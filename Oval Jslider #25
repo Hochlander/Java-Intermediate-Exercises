@@ -1,0 +1,90 @@
+// seguindo the new boston #25
+
+// Criando um oval com java no Gui
+
+// classe que cria o oval abaixo
+
+import java.awt.*;
+import javax.swing.*;
+
+public class apples extends JPanel{
+	
+	// atribuindo um diametro ao oval
+	private int diametro;
+	
+	// pintando o oval na tela
+	public void paintComponent(Graphics g){
+		//a linha abaixxo chama um método da superclasse
+		super.paintComponent(g);
+		// a linha abaixo cria o oval, e deixa duas variáveis dinâmicas, para que seu tamnho possa mudar
+		g.fillOval(10, 10, diametro, diametro);
+	}
+				
+		// abaixo, se assegurará diametro maior que zero, e se estabelecerá 10 como default
+	public void setDiametro (int novoDiametro) {
+		diametro = (novoDiametro >= 0? novoDiametro : 10);
+		// método repaint chama paintComponeent de novo. É um built-in
+		repaint();
+	}
+	
+	public Dimension getPreferredSize() {
+		return new Dimension (200, 200);
+	}
+	public Dimension getMinimumSize() {
+		return getPreferredSize ();
+	}	
+}
+
+//classe que cria o slider abaixo
+import java.awt.*;
+import javax.swing.event.*;
+import javax.swing.*;
+
+// construindo a janela
+
+public class Fish extends JFrame {
+
+	// anuunciando o slider e a (apples)
+	private JSlider slider;
+	private apples myPanel;
+	
+	// construindo a janela
+	public Fish() {
+		super ("the title");
+		myPanel = new apples();
+		myPanel.setBackground(Color.ORANGE);
+	
+		// construindo o slider
+		slider = new JSlider(SwingConstants.HORIZONTAL, 0, 200, 10);
+		slider.setMajorTickSpacing(10);
+		slider.setPaintTicks(true);
+		
+		slider.addChangeListener(
+				new ChangeListener() {
+					public void stateChanged(ChangeEvent e) {
+						myPanel.setDiametro(slider.getValue());
+					}
+				}
+				
+		);
+		
+		add(slider, BorderLayout.SOUTH);
+		add(myPanel, BorderLayout.CENTER);
+	}		
+}
+
+// classe principal abaixo
+
+import javax.swing.*;
+
+public class Dog{
+	
+	public static void main (String[] args) {
+		
+		Fish f = new Fish();
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setSize(460, 560);
+		f.setVisible(true);
+	}
+
+}
